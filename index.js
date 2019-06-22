@@ -6,16 +6,16 @@ let gameField = document.querySelector(".game__field");
     let random = Math.random();
     if (random < 0.25) {
         square.innerHTML = "♠";
-        square.style.background = "red";
+        square.style.color = "black";
     } else if (random > 0.25 && random < 0.5) {
         square.innerHTML = "♣";
-        square.style.background = "green";
+        square.style.color = "green";
     } else if (random > 0.5 && random < 0.75) {
         square.innerHTML = "♢";
-        square.style.background = "yellow";
+        square.style.color = "brown";
     } else {
         square.innerHTML = "♡";
-        square.style.background = "#00BFFF";
+        square.style.color = "red";
     }
 
     square.setAttribute("x", x);
@@ -45,7 +45,7 @@ function removeInner(x, y) {
         ? gameField.querySelector(`[x="${x + 1}"][y="${y}"]`).innerHTML
         : 0;
     gameField.querySelector(`[x="${x}"][y="${y}"]`).innerHTML = "";
-    gameField.querySelector(`[x="${x}"][y="${y}"]`).style.background = "";
+    // gameField.querySelector(`[x="${x}"][y="${y}"]`).style.background = "";
     if (value === topValue) {
         removeInner(x, y - 1);
     }
