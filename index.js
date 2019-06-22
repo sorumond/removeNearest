@@ -45,7 +45,6 @@ function removeInner(x, y) {
         ? gameField.querySelector(`[x="${x + 1}"][y="${y}"]`).innerHTML
         : 0;
     gameField.querySelector(`[x="${x}"][y="${y}"]`).innerHTML = "";
-    // gameField.querySelector(`[x="${x}"][y="${y}"]`).style.background = "";
     if (value === topValue) {
         removeInner(x, y - 1);
     }
