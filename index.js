@@ -6,16 +6,16 @@ let gameField = document.querySelector(".game__field");
     let random = Math.random();
     if (random < 0.25) {
         square.innerHTML = "♠";
-        square.style.color = "black";
+        square.classList.add('spades');
     } else if (random > 0.25 && random < 0.5) {
         square.innerHTML = "♣";
-        square.style.color = "green";
+        square.classList.add('clubs');
     } else if (random > 0.5 && random < 0.75) {
         square.innerHTML = "♢";
-        square.style.color = "brown";
+        square.classList.add('diamonds');
     } else {
         square.innerHTML = "♡";
-        square.style.color = "red";
+        square.classList.add('hearts');
     }
 
     square.setAttribute("x", x);

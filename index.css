@@ -26,3 +26,13 @@
 .solution {
     font-size: 35px;
 }
+
+.diamonds,
+.hearts {
+    color: #c62216;
+}
+
+.clubs,
+.spades {
+    color: #22261f;
+}
