@@ -1,11 +1,25 @@
 let x = 1;
 let y = 1;
-
 let gameField = document.querySelector('.game__field');
 
 [...gameField.children].forEach((square) => {
     let random = Math.random();
-    square.innerHTML = random < 0.7 ? '♠' : random < 0.8 || random > 0.7 ? '♣' : random < 0.9 || random > 0.8 ? '♢' : '♡';
+    // square.innerHTML = random < 0.25 ? '♠' : random > 0.25 && random > 0.5 ? '♣' : random > 0.5 && random < 0.75 ? '♢' : '♡';
+
+    if (random < 0.25) {
+        square.innerHTML = '♠';
+        square.style.background = 'red';
+    } else if (random > 0.25 && random < 0.5) {
+        square.innerHTML = '♣';
+        square.style.background = 'green';
+    } else if ( random > 0.5 && random < 0.75) {
+        square.innerHTML = '♢';
+        square.style.background = 'yellow';
+    } else {
+        square.innerHTML = '♡';
+        square.style.background = '#00BFFF';
+    }
+
     square.setAttribute('x', x);
     x++;
     square.setAttribute('y', y);
@@ -16,13 +30,17 @@ let gameField = document.querySelector('.game__field');
 });
 
 function removeInner(x, y) {
+    console.count();
     let value = gameField.querySelector(`[x="${x}"][y="${y}"]`).innerHTML;
+    if (value === '') {
+        return;
+    }
     let topValue = gameField.querySelector(`[x="${x}"][y="${y - 1}"]`) ? gameField.querySelector(`[x="${x}"][y="${y - 1}"]`).innerHTML : 0;
     let bottomValue = gameField.querySelector(`[x="${x}"][y="${y + 1}"]`) ? gameField.querySelector(`[x="${x}"][y="${y + 1}"]`).innerHTML : 0;
     let leftValue = gameField.querySelector(`[x="${x - 1}"][y="${y}"]`) ? gameField.querySelector(`[x="${x - 1}"][y="${y}"]`).innerHTML : 0;
     let rightValue = gameField.querySelector(`[x="${x + 1}"][y="${y}"]`) ? gameField.querySelector(`[x="${x + 1}"][y="${y}"]`).innerHTML : 0;
     gameField.querySelector(`[x="${x}"][y="${y}"]`).innerHTML = '';
-
+    gameField.querySelector(`[x="${x}"][y="${y}"]`).style.background = '';
     if (value === topValue) {
         removeInner(x, y - 1);
     }
@@ -35,6 +53,7 @@ function removeInner(x, y) {
     if (value === rightValue) {
         removeInner(x + 1, y);
     }
+
 }
 
 document.addEventListener('click', (e) => {

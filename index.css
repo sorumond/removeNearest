@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     width: 500px;
     height: 500px;
+    outline: 2px solid black;
 }
 
 .game__squares {
@@ -10,6 +11,7 @@
     text-align: center;
     border: 1px solid black;
     box-sizing: border-box;
+    height: calc(100% / 7);
 }
 
 
