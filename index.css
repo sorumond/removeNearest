@@ -8,7 +8,7 @@
     flex-wrap: wrap;
     width: 500px;
     height: 500px;
-    outline: 2px solid black;
+    /*outline: 2px solid black;*/
     justify-content: center;
 }
 
@@ -24,7 +24,10 @@
 }
 
 .solution {
+    display: block;
     font-size: 35px;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .diamonds,

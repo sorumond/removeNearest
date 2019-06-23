@@ -1,5 +1,20 @@
 let x = 1;
 let y = 1;
+
+function createGame(id, x, y) {
+    let gameField = ``;
+    for (let i = 0; i < y; i++) {
+        for (let k = 0; k < x; k++) {
+            gameField += `<div class="game__squares"></div>`;
+        }
+
+    }
+    document.querySelector(`#${id}`).innerHTML = `<div class="game">
+        <div class="game__field">${gameField}</div></div>`
+}
+
+createGame('game', 6, 7);
+
 let gameField = document.querySelector(".game__field");
 
 [...gameField.children].forEach(square => {
