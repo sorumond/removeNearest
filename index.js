@@ -44,18 +44,10 @@ function removeInner(x, y) {
     if (value === "") {
         return;
     }
-    let topValue = gameField.querySelector(`[x="${x}"][y="${y - 1}"]`)
-        ? gameField.querySelector(`[x="${x}"][y="${y - 1}"]`).innerHTML
-        : 0;
-    let bottomValue = gameField.querySelector(`[x="${x}"][y="${y + 1}"]`)
-        ? gameField.querySelector(`[x="${x}"][y="${y + 1}"]`).innerHTML
-        : 0;
-    let leftValue = gameField.querySelector(`[x="${x - 1}"][y="${y}"]`)
-        ? gameField.querySelector(`[x="${x - 1}"][y="${y}"]`).innerHTML
-        : 0;
-    let rightValue = gameField.querySelector(`[x="${x + 1}"][y="${y}"]`)
-        ? gameField.querySelector(`[x="${x + 1}"][y="${y}"]`).innerHTML
-        : 0;
+    let topValue = getNearCell(x, y-1);
+    let bottomValue = getNearCell(x, y+1);
+    let leftValue = getNearCell(x-1, y);
+    let rightValue = getNearCell(x+1, y);
     gameField.querySelector(`[x="${x}"][y="${y}"]`).innerHTML = "";
     if (value === topValue) {
         removeInner(x, y - 1);
@@ -69,6 +61,10 @@ function removeInner(x, y) {
     if (value === rightValue) {
         removeInner(x + 1, y);
     }
+}
+
+function getNearCell(x, y) {
+    return gameField.querySelector(`[x="${x}"][y="${y}"]`) && gameField.querySelector(`[x="${x}"][y="${y}"]`).innerHTML;
 }
 
 document.addEventListener("click", e => {
