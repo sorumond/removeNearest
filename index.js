@@ -3,9 +3,9 @@ let y = 1;
 
 function createGame(id, x, y) {
     let gameField = ``;
-    for (let i = 0; i < y; i++) {
-        for (let k = 0; k < x; k++) {
-            gameField += `<div class="game__squares"></div>`;
+    for (let i = 1; i < y+1; i++) {
+        for (let k = 1; k < x+1; k++) {
+            gameField += getCell(k, i);
         }
 
     }
@@ -13,34 +13,31 @@ function createGame(id, x, y) {
         <div class="game__field">${gameField}</div></div>`
 }
 
+function getCell(x, y) {
+    let random = Math.random();
+    let className;
+    let type;
+
+    if (random < 0.25) {
+        type = "♠";
+        className = 'game__squares_spades';
+    } else if (random > 0.25 && random < 0.5) {
+        type = "♣";
+        className = 'game__squares_clubs';
+    } else if (random > 0.5 && random < 0.75) {
+        type = "♢";
+        className = 'game__squares_diamonds';
+    } else {
+        type = "♡";
+        className = 'game__squares_hearts';
+    }
+
+    return `<div class="game__squares ${className}" x=${x} y=${y}>${type}</div>`
+}
+
 createGame('game', 6, 7);
 
 let gameField = document.querySelector(".game__field");
-
-[...gameField.children].forEach(square => {
-    let random = Math.random();
-    if (random < 0.25) {
-        square.innerHTML = "♠";
-        square.classList.add('spades');
-    } else if (random > 0.25 && random < 0.5) {
-        square.innerHTML = "♣";
-        square.classList.add('clubs');
-    } else if (random > 0.5 && random < 0.75) {
-        square.innerHTML = "♢";
-        square.classList.add('diamonds');
-    } else {
-        square.innerHTML = "♡";
-        square.classList.add('hearts');
-    }
-
-    square.setAttribute("x", x);
-    x++;
-    square.setAttribute("y", y);
-    if (x > 6) {
-        y++;
-        x = 1;
-    }
-});
 
 function removeInner(x, y) {
     let value = gameField.querySelector(`[x="${x}"][y="${y}"]`).innerHTML;

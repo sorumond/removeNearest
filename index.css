@@ -30,12 +30,12 @@
     margin: 0 auto;
 }
 
-.diamonds,
-.hearts {
+.game__squares_diamonds,
+.game__squares_hearts {
     color: #c62216;
 }
 
-.clubs,
-.spades {
+.game__squares_clubs,
+.game__squares_spades {
     color: #22261f;
 }
