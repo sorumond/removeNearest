@@ -40,7 +40,8 @@ createGame('game', 6, 7);
 let gameField = document.querySelector(".game__field");
 
 function removeInner(x, y) {
-    let value = gameField.querySelector(`[x="${x}"][y="${y}"]`).innerHTML;
+    let gameSquare = gameField.querySelector(`[x="${x}"][y="${y}"]`);
+    let value = gameSquare.innerHTML;
     if (value === "") {
         return;
     }
@@ -48,7 +49,7 @@ function removeInner(x, y) {
     let bottomValue = getNearCell(x, y+1);
     let leftValue = getNearCell(x-1, y);
     let rightValue = getNearCell(x+1, y);
-    gameField.querySelector(`[x="${x}"][y="${y}"]`).innerHTML = "";
+    gameSquare.innerHTML = "";
     if (value === topValue) {
         removeInner(x, y - 1);
     }

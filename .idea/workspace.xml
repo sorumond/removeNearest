@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="84fe0bdf-afdd-49e8-8cd4-2f05b1599f09" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="50" column="35" lean-forward="true" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
+            <state relative-caret-position="10">
+              <caret line="50" column="28" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -124,7 +123,7 @@
       <updated>1561209373415</updated>
       <workItem from="1561209375647" duration="16495000" />
       <workItem from="1561240189945" duration="173000" />
-      <workItem from="1561277647854" duration="6067000" />
+      <workItem from="1561277647854" duration="6950000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1561217987599</created>
@@ -182,15 +181,21 @@
       <option name="project" value="LOCAL" />
       <updated>1561282220725</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="rework getting value of closest Cell">
+      <created>1561284298890</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1561284298890</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22735000" />
+    <option name="totallyTimeSpent" value="23618000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16332982" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -223,7 +228,8 @@
     <MESSAGE value="change color" />
     <MESSAGE value="remove field from html to js" />
     <MESSAGE value="rework field generation" />
-    <option name="LAST_COMMIT_MESSAGE" value="rework field generation" />
+    <MESSAGE value="rework getting value of closest Cell" />
+    <option name="LAST_COMMIT_MESSAGE" value="rework getting value of closest Cell" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.css">
@@ -242,8 +248,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="50" column="35" lean-forward="true" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
+        <state relative-caret-position="10">
+          <caret line="50" column="28" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
         </state>
       </provider>
     </entry>
